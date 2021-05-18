@@ -9,7 +9,17 @@ a {
   text-decoration: none;
 }
 
+img {
+  width: 100%;
+}
+
+input {
+  font: inherit;
+  outline: none;
+}
+
 body {
   font-family: sans-serif;
   color: $white-clr;
+  background-color: $dark-bg;
 }

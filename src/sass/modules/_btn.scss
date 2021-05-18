@@ -1,0 +1,27 @@
+.btn {
+  background: $red-bg100;
+  color: $white-clr;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+
+  &--rounded {
+    background: $red-bg100;
+    font-size: 0.9rem;
+    padding: 0.8rem 0.6rem;
+    border-radius: 3px;
+  }
+  &--large {
+    margin: 0.25rem auto;
+    padding: 0.7rem 1.3rem;
+    margin-top: 15px;
+    height: 40px;
+    width: 25%;
+    font-weight: 500;
+    background-color: $red-bg200;
+    &:hover {
+      background-color: #e50914;
+      background-image: linear-gradient(to bottom, #e50914, #db0510);
+    }
+  }
+}
