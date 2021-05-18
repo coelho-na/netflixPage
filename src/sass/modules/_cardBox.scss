@@ -1,0 +1,24 @@
+.cardBox {
+  &__txtBox {
+    text-align: center;
+  }
+  &__title {
+    margin: 0;
+    font-size: 1.6rem;
+
+    margin-bottom: 0.5rem;
+  }
+
+  &__subtitle {
+    font-size: 1.25rem;
+    margin: 0.75em 0 0.25em;
+  }
+
+  &__imgBox {
+    position: relative;
+  }
+
+  &__video {
+    position: absolute;
+  }
+}
