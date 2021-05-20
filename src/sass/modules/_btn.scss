@@ -2,23 +2,25 @@
   background: $red-bg100;
   color: $white-clr;
   font-size: 1rem;
-  display: flex;
-  align-items: center;
+  cursor: pointer;
 
   &--rounded {
     background: $red-bg100;
     font-size: 0.9rem;
-    padding: 0.8rem 0.6rem;
+    padding: 0.85rem 0.6rem;
     border-radius: 3px;
+    display: flex;
+    align-items: center;
   }
   &--large {
-    margin: 0.25rem auto;
+    margin: 10px auto;
     padding: 0.7rem 1.3rem;
-    margin-top: 15px;
-    height: 40px;
-    width: 25%;
+    height: 43px;
+    width: 116px;
     font-weight: 500;
     background-color: $red-bg200;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.45);
+    border-radius: 2px;
     &:hover {
       background-color: #e50914;
       background-image: linear-gradient(to bottom, #e50914, #db0510);

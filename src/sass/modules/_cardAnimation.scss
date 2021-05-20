@@ -1,0 +1,51 @@
+.cardAnimation {
+  position: absolute;
+  left: 50%;
+  bottom: 8%;
+  transform: translateX(-50%);
+  background: $dark-bg;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 34px $dark-bg;
+  display: flex;
+  align-items: center;
+  width: 70%;
+  min-width: 240px;
+  border-radius: 12px;
+  padding: 0.35rem 0.75rem;
+  &__imgBox {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin: 0 1rem 0 0;
+  }
+
+  &__img {
+    height: 48px;
+    width: 35px;
+  }
+
+  &__txtBox {
+    flex-grow: 1;
+    flex-shrink: 1;
+    margin: 0.3rem 0;
+  }
+
+  &__textOne {
+    font-size: 0.9rem;
+  }
+
+  &__textTwo {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: $blue-clr;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: 48px;
+    height: 48px;
+    background: url("https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/download-icon.gif")
+      center center no-repeat;
+    background-size: 100%;
+  }
+}
