@@ -7,6 +7,7 @@
   padding: 20px 0;
   font-size: 1.125rem;
   width: 100%;
+  border-bottom: 8px solid #222;
 
   &__collection {
     margin: 1.25em auto;
@@ -14,7 +15,7 @@
   }
 
   &__header {
-    padding: 0.85em 2.2em 0.85em 1.2em;
+    padding: 0.7em 2.2em 0.7em 1.2em;
     margin-bottom: 1px;
     font-weight: 400;
     position: relative;
@@ -45,7 +46,7 @@
     font-size: 1.625rem;
     line-height: 1.1;
     margin-top: 2rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
   }
 
   &__item {
@@ -68,4 +69,64 @@
     max-height: 1200px;
     transition: max-height 0.25s cubic-bezier(0.5, 0, 0.1, 1);
   }
+
+  &__signature {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 0 5%;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  &__description {
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0 10%;
+    margin: 0 auto;
+    max-width: 450px;
+    text-align: center;
+  }
+
+  &__form {
+    width: 100%;
+    position: relative;
+    margin: 10px auto;
+    max-width: 500px;
+  }
+
+  &__input {
+    width: 100%;
+    height: 48px;
+    padding: 10px 10px 0;
+    border-radius: 2px;
+    font-size: 16px;
+    border: solid 1px #8c8c8c;
+    color: $gray-clr;
+    margin-bottom: 25px;
+  }
+
+  &__label {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    color: #8c8c8c;
+    font-size: 14px;
+    color: $gray-clr;
+  }
+
+  &__icon {
+    height: 0.75em;
+    width: 0.35em;
+    font-size: 0.8rem;
+    margin: 0 0 5px 3px;
+  }
+}
+
+.accordion__input:focus ~ .accordion__label,
+.accordion__input:not(:placeholder-shown).accordion__input:not(:focus)
+  ~ .accordion__label {
+  font-size: 11px;
+  left: 7px;
+  top: 5px;
 }

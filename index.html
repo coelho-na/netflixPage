@@ -162,7 +162,7 @@
 
     <section class="accordion">
       <h1 class="accordion__title">Perguntas frequentes</h1>
-      <div class="accordion">
+      
         <div class="accordion__item">
           <div class="accordion__header">
             <span class="accordion__question"> O que é a Netflix? </span>
@@ -258,23 +258,25 @@
           </div>
         </div>
       </div>
-      <p class="accordion__description">
-        Pronto para assistir? Informe seu email para criar ou reiniciar sua
-        assinatura.
-      </p>
-      <form class="accordion__form">
-        <input
-          type="email"
-          id="email"
-          class="accordion__input"
-          placeholder=" "
-        />
-        <label for="email" class="accordion__label">Email</label>
-        <a href="#" class="btn btn--large">
-          <span class="btn__text"> Vamos lá </span>
-          <i class="fas fa-chevron-right accordion __icon"></i>
-        </a>
-      </form>
+      <div class="accordion__signature">
+        <p class="accordion__description">
+          Pronto para assistir? Informe seu email para criar ou reiniciar sua
+          assinatura.
+        </p>
+        <form class="accordion__form">
+          <input
+            type="email"
+            id="email"
+            class="accordion__input"
+            placeholder=" "
+          />
+          <label for="email" class="accordion__label">Email</label>
+          <a href="#" class="btn btn--large">
+            <span class="btn__text"> Vamos lá </span>
+            <i class="fas fa-chevron-right accordion__icon"></i>
+          </a>
+        </form>
+      </div>
     </section>
 
     <script src="./src/script/accordion.js"></script>
