@@ -1,6 +1,6 @@
 .wrapper {
-  padding: 50px 5%;
+  padding: 3.125rem 5%;
   @include respond(minScreen) {
-    padding: 70px 45px;
+    padding: 4.375rem 2.8125rem;
   }
 }

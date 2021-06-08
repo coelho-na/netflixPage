@@ -1,7 +1,7 @@
 @import "../base/mixins";
 
 .header {
-  max-height: 50px;
+  max-height: 3.125rem;
   background-color: transparent;
   position: relative;
 
@@ -21,7 +21,7 @@
     z-index: 22;
     display: flex;
     justify-content: space-between;
-    padding-top: 23px;
+    padding-top: 1.4375rem;
     @include respond(minScreen) {
       padding-top: 2rem;
     }
@@ -31,8 +31,8 @@
     }
   }
   &__logo {
-    width: 88.8px;
-    height: 24px;
+    width: 5.55rem;
+    height: 1.5rem;
     @include respond(minScreen) {
       width: 6.75rem;
       height: 2rem;
@@ -70,7 +70,6 @@
     font-size: 0.75rem;
     top: 0.5rem;
     left: 0.5rem;
-    // padding-left: 0.5rem;
     @include respond(minScreen) {
       top: 0.7rem;
     }

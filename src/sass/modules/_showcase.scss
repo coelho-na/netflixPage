@@ -147,7 +147,7 @@
 
   &::before {
     content: "";
-    height: 70px;
+    height: 4.375rem;
     width: 100%;
     position: absolute;
     background-image: linear-gradient(to bottom, #000 25%, rgba(0, 0, 0, 0));
@@ -162,7 +162,7 @@
     flex-direction: column;
     align-items: center;
     @include respond(mediumScreen) {
-      margin: 10px auto;
+      margin: 0.625rem auto;
     }
     @include respond(bigScreen) {
       flex-direction: row;
@@ -250,10 +250,10 @@
     height: 0.75em;
     width: 0.35em;
     font-size: 0.8rem;
-    margin: 0 0 5px 3px;
+    margin: 0 0 0.3125rem 0.1875rem;
     @include respond(bigScreen) {
-      margin-top: 7px;
-      margin-left: 8px;
+      margin-top: 0.4375rem;
+      margin-left: 0.5rem;
     }
   }
 }

@@ -10,14 +10,14 @@
   &--rounded {
     background: $red-bg100;
     font-size: 0.9rem;
-    padding: 7px 12px;
+    padding: 0.4375rem 0.75rem;
     border-radius: 3px;
     display: flex;
     align-items: center;
     cursor: pointer;
 
     @include respond(minScreen) {
-      padding: 7px 17px;
+      padding: 0.4375rem 1.0625rem;
       font-size: 1rem;
       height: 2.1875rem;
     }
@@ -35,7 +35,7 @@
     }
 
     @media screen and (min-width: 280px) and (max-width: 950px) {
-      margin-top: -12px;
+      margin-top: -0.75rem;
     }
 
     @include respond(smallerScreen) {
