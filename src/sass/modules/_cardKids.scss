@@ -1,0 +1,22 @@
+.cardKids {
+  &__imgBox {
+    position: relative;
+    max-width: 600px;
+
+    @include respond(minScreen) {
+      margin-top: 1rem;
+    }
+
+    @include respond(bigScreen) {
+      width: 48%;
+    }
+  }
+  &__container {
+    margin: 0 auto;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+  }
+}

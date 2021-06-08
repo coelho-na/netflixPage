@@ -3,6 +3,9 @@
   color: $white-clr;
   font-size: 1rem;
   cursor: pointer;
+  @include respond(smallerScreen) {
+    font-size: 0.8rem;
+  }
 
   &--rounded {
     background: $red-bg100;
@@ -12,12 +15,16 @@
     display: flex;
     align-items: center;
     cursor: pointer;
+
+    @include respond(minScreen) {
+      padding: 7px 17px;
+      font-size: 1rem;
+      height: 2.1875rem;
+    }
   }
   &--large {
     margin: 10px auto;
     padding: 0.7rem 1.3rem;
-    height: 43px;
-    width: 116px;
     font-weight: 500;
     background-color: $red-bg200;
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.45);
@@ -25,6 +32,27 @@
     &:hover {
       background-color: #e50914;
       background-image: linear-gradient(to bottom, #e50914, #db0510);
+    }
+
+    @media screen and (min-width: 280px) and (max-width: 950px) {
+      margin-top: -12px;
+    }
+
+    @include respond(smallerScreen) {
+      padding: 0.5rem 0.8rem;
+    }
+
+    @include respond(bigScreen) {
+      margin: 0;
+      height: 3.75rem;
+      line-height: 1.5;
+      font-size: 1.625rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0 1em;
+      border: none;
+      margin-top: 0;
     }
   }
 }

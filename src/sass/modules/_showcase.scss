@@ -1,24 +1,130 @@
 @import "../base/variables";
+@import "../base/mixins";
 
 .showcase {
-  max-width: 100%;
+  width: 100%;
   position: absolute;
-  height: 517.797px;
+  height: 500px;
+  overflow: hidden;
   position: relative;
   border-bottom: 8px solid $border-clr;
 
-  &__subtitle {
-    font-weight: lighter;
+  @include respond(minScreen) {
+    height: 797px;
   }
 
-  &__description {
-    margin: 0.5rem 0;
-    font-weight: bold;
+  @media screen and (min-width: 592px) {
+    height: 742px;
+  }
+
+  @include respond(mediumScreen) {
+    height: 709px;
+  }
+
+  @include respond(tablet) {
+    height: 733px;
+  }
+
+  @include respond(bigScreen) {
+    height: 706.984px;
   }
 
   &__bg {
     height: 100%;
     object-fit: cover;
+  }
+
+  &__content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 10;
+    margin-top: 2.2rem;
+
+    @include respond(minScreen) {
+      margin-top: 2.6rem;
+      left: 0;
+      padding: 0;
+    }
+
+    @include respond(mediumScreen) {
+      padding: 0;
+      margin-top: 1.7rem;
+    }
+
+    @include respond(smallerScreen) {
+      padding: 0 10px;
+    }
+  }
+
+  &__title {
+    font-size: 1.75rem;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+    margin: 0 auto;
+    text-align: center;
+    max-width: 700px;
+
+    @include respond(minScreen) {
+      font-size: 3.125rem;
+    }
+  }
+
+  &__subtitle {
+    font-weight: lighter;
+    font-size: 1.2rem;
+    margin: 0.9rem auto;
+    font-weight: 400;
+
+    @include respond(smallerScreen) {
+      font-size: 1.1rem;
+      margin: 0.5rem;
+    }
+
+    @include respond(minScreen) {
+      font-size: 1.625rem;
+    }
+    @include respond(mediumScreen) {
+      padding: 0 3rem;
+      margin: 1rem 0;
+    }
+
+    @include respond(bigScreen) {
+      margin-bottom: 1.3rem;
+    }
+  }
+
+  &__description {
+    font-size: 1.2rem;
+    font-weight: 400;
+    padding: 0 10%;
+    margin: 0.5rem 0;
+
+    @include respond(minScreen) {
+      font-size: 1.125rem;
+      padding: 0;
+    }
+
+    @include respond(smallerScreen) {
+      font-size: 1rem;
+      padding: 0;
+    }
+
+    @include respond(tablet) {
+      font-size: 1.4375rem;
+    }
+
+    @include respond(bigScreen) {
+      font-size: 1.2rem;
+      padding: 0;
+      padding-bottom: 0.8rem;
+    }
   }
 
   &::after {
@@ -45,66 +151,99 @@
     width: 100%;
     position: absolute;
     background-image: linear-gradient(to bottom, #000 25%, rgba(0, 0, 0, 0));
+    @include respond(minScreen) {
+      background-image: none;
+    }
   }
 
-  &__content {
-    position: absolute;
-    height: 100%;
+  &__formBox {
     width: 100%;
-    top: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    z-index: 10;
-    margin-top: 1.3rem;
-  }
-
-  &__title {
-    font-size: 1.75rem;
-    line-height: 1.1;
-    margin-bottom: 0.5rem;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  &__subtitle {
-    font-size: 1.2rem;
-    margin: 0.9rem auto;
-    font-weight: 400;
-  }
-
-  &__description {
-    font-size: 1.2rem;
-    font-weight: 400;
-    padding: 0 10%;
+    @include respond(mediumScreen) {
+      margin: 10px auto;
+    }
+    @include respond(bigScreen) {
+      flex-direction: row;
+      margin: 0 auto;
+      text-align: center;
+      justify-content: center;
+      align-items: initial;
+    }
   }
 
   &__form {
     width: 100%;
-    height: auto;
     position: relative;
+    max-width: 520px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include respond(bigScreen) {
+      margin: 0;
+      width: auto;
+      margin-right: 1px;
+    }
   }
 
   &__input {
     width: 90%;
-    height: 48px;
-    padding: 10px 10px 0;
-    border-radius: 2px;
-    font-size: 16px;
+    height: 3.125rem;
+    padding: 0.625rem 0.625rem 0;
+    border-radius: 0.125rem;
+    font-size: 1rem;
     border: solid 1px #8c8c8c;
     color: $gray-clr;
-    margin-bottom: 25px;
+    margin-bottom: 1.5625rem;
+    max-width: 32.5rem;
+
+    @include respond(minScreen) {
+      width: 100%;
+    }
+
+    @include respond(smallerScreen) {
+      height: 2.7rem;
+    }
+
+    @include respond(tablet) {
+      height: 3.75rem;
+      width: 95%;
+    }
+    @include respond(bigScreen) {
+      min-width: 450px;
+    }
   }
 
   &__label {
     position: absolute;
-    top: 15px;
-    left: 35px;
     color: #8c8c8c;
-    font-size: 14px;
+    font-size: 0.875rem;
     color: $gray-clr;
+    top: 1rem;
+    left: 2.2rem;
+    transition: all ease-in-out 300ms;
+
+    @include respond(minScreen) {
+      left: 0.7rem;
+    }
+
+    @include respond(smallerScreen) {
+      top: 0.9rem;
+      font-size: 0.8rem;
+      left: 1.5rem;
+    }
+    @include respond(tablet) {
+      top: 1.3rem;
+      left: 1.5rem;
+      font-weight: 1rem;
+      font-weight: bold;
+    }
+
+    @include respond(bigScreen) {
+      left: 0.5rem;
+    }
   }
 
   &__icon {
@@ -112,13 +251,31 @@
     width: 0.35em;
     font-size: 0.8rem;
     margin: 0 0 5px 3px;
+    @include respond(bigScreen) {
+      margin-top: 7px;
+      margin-left: 8px;
+    }
   }
 }
 
 .showcase__input:focus ~ .showcase__label,
 .showcase__input:not(:placeholder-shown).showcase__input:not(:focus)
   ~ .showcase__label {
-  font-size: 11px;
-  left: 2rem;
-  top: 5px;
+  font-size: 0.6875rem;
+  left: 2.2rem;
+  top: 0.3125rem;
+
+  @include respond(minScreen) {
+    left: 0.7rem;
+  }
+
+  @include respond(tablet) {
+    left: 1.5rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+
+  @include respond(bigScreen) {
+    left: 0.5rem;
+  }
 }

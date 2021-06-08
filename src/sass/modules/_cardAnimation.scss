@@ -1,8 +1,6 @@
 .cardAnimation {
   position: absolute;
-  left: 50%;
   bottom: 8%;
-  transform: translateX(-50%);
   background: $dark-bg;
   border: 2px solid rgba(255, 255, 255, 0.25);
   box-shadow: 0 0 34px $dark-bg;
@@ -12,31 +10,61 @@
   min-width: 240px;
   border-radius: 12px;
   padding: 0.35rem 0.75rem;
+
+  &__centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__downloadBox {
+    position: relative;
+    @include respond(bigScreen) {
+      width: 48%;
+      min-width: 100px;
+    }
+  }
+
+  &__container {
+    @include respond(minScreen) {
+      margin: -8% 0 0 0;
+    }
+    @include respond(bigScreen) {
+      margin: -8% 0 -4% -15%;
+    }
+  }
+
   &__imgBox {
-    flex-grow: 0;
-    flex-shrink: 0;
     margin: 0 1rem 0 0;
   }
 
   &__img {
-    height: 48px;
-    width: 35px;
+    height: 3rem;
+    width: 2.1875rem;
+    @include respond(minScreen) {
+      height: 4rem;
+      width: 2.875rem;
+    }
   }
 
   &__txtBox {
-    flex-grow: 1;
-    flex-shrink: 1;
     margin: 0.3rem 0;
   }
 
   &__textOne {
     font-size: 0.9rem;
+    @include respond(minScreen) {
+      font-size: 1rem;
+    }
   }
 
   &__textTwo {
     font-size: 0.75rem;
     font-weight: 400;
     color: $blue-clr;
+    @include respond(minScreen) {
+      font-size: 0.9rem;
+    }
   }
 
   &::after {

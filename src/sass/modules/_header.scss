@@ -1,10 +1,19 @@
+@import "../base/mixins";
+
 .header {
   max-height: 50px;
   background-color: transparent;
   position: relative;
-  margin: 0 auto;
-  padding-top: 25px;
+
   margin: 0 5%;
+
+  @include respond(minScreen) {
+    margin: 0 7%;
+  }
+
+  @include respond(bigScreen) {
+    margin: 0 3.5rem;
+  }
 
   &__container {
     width: 100%;
@@ -12,9 +21,86 @@
     z-index: 22;
     display: flex;
     justify-content: space-between;
+    padding-top: 23px;
+    @include respond(minScreen) {
+      padding-top: 2rem;
+    }
+
+    @include respond(biggestScreen) {
+      padding-top: 1.7rem;
+    }
   }
   &__logo {
     width: 88.8px;
     height: 24px;
+    @include respond(minScreen) {
+      width: 6.75rem;
+      height: 2rem;
+    }
+    @include respond(bigScreen) {
+      width: 8.375rem;
+      height: 2.25rem;
+    }
+
+    @include respond(biggestScreen) {
+      width: 10.4375rem;
+      height: 2.8125rem;
+    }
+  }
+
+  &__languageBlock {
+    position: relative;
+    margin: 0 0.75rem;
+
+    @media screen and(max-width: 280px) {
+      display: none;
+    }
+
+    @include respond(minScreen) {
+      margin-right: 1.5rem;
+    }
+
+    @include respond(bigScreen) {
+      margin-right: 2rem;
+    }
+  }
+
+  &__iconGlobe {
+    position: absolute;
+    font-size: 0.75rem;
+    top: 0.5rem;
+    left: 0.5rem;
+    // padding-left: 0.5rem;
+    @include respond(minScreen) {
+      top: 0.7rem;
+    }
+  }
+
+  &__iconCaret {
+    position: absolute;
+    font-size: 0.8rem;
+    top: 0.5rem;
+    right: 0.38rem;
+
+    @include respond(minScreen) {
+      top: 0.7rem;
+    }
+  }
+
+  &__languageSelection {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid #aaa;
+    color: $white-clr;
+    font-size: 0.875rem;
+    padding: 0.25rem 0.1rem 0.25rem 1.2rem;
+    line-height: 1.3em;
+
+    @include respond(minScreen) {
+      padding: 0.45rem 0.1rem 0.45rem 1.2rem;
+    }
+  }
+
+  &__languageLockup {
+    display: flex;
   }
 }

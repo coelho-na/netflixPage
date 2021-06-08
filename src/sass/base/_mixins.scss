@@ -1,8 +1,24 @@
 @mixin respond($breakpoint) {
   // $breakpoint is simply a variable that can have several values
+  @if $breakpoint == smallerScreen {
+    @media only screen and (max-width: 400px) {
+      @content;
+    }
+  }
 
-  @if $breakpoint==miniTel {
-    @media only screen and (min-width: 552px) {
+  @if $breakpoint==minScreen {
+    @media only screen and (min-width: 550px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==mediumScreen {
+    @media (min-width: 610px) {
+      @content;
+    }
+  }
+  @if $breakpoint==tablet {
+    @media (min-width: 740px) {
       @content;
     }
   }
@@ -13,8 +29,8 @@
     }
   }
 
-  @if $breakpoint==lessThanMinWidth {
-    @media only screen and (max-width: 320px) {
+  @if $breakpoint==biggestScreen {
+    @media only screen and (min-width: 1450px) {
       @content;
     }
   }

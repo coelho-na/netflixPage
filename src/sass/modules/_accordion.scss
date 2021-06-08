@@ -4,10 +4,17 @@
   justify-content: center;
   align-items: center;
   margin: auto;
-  padding: 20px 0;
+  padding: 1.25rem 0;
   font-size: 1.125rem;
   width: 100%;
   border-bottom: 8px solid #222;
+  @include respond(minScreen) {
+    padding: 4.375rem 2.8125rem;
+  }
+
+  @include respond(bigScreen) {
+    font-size: 1.625rem;
+  }
 
   &__collection {
     margin: 1.25em auto;
@@ -15,7 +22,7 @@
   }
 
   &__header {
-    padding: 0.7em 2.2em 0.7em 1.2em;
+    padding: 0.8em 2.2em 0.8em 1.2em;
     margin-bottom: 1px;
     font-weight: 400;
     position: relative;
@@ -23,12 +30,18 @@
     text-align: left;
     background: $gray-bg;
     align-items: center;
+    @include respond(minScreen) {
+      padding: 0.9em 2.2em 0.9em 1.2em;
+    }
 
     &::after {
       content: "\002B";
       font-size: 1.5rem;
       position: absolute;
       right: 1em;
+      @include respond(smallerScreen) {
+        right: 0.9rem;
+      }
     }
 
     &.active::after {
@@ -38,20 +51,49 @@
 
   &__question {
     font-size: 1.125rem;
+
+    @include respond(smallerScreen) {
+      font-size: 1rem;
+    }
+    @include respond(bigScreen) {
+      font-size: 1.625rem;
+    }
   }
 
   &__title {
-    padding-left: 5%;
-    padding-right: 5%;
     font-size: 1.625rem;
     line-height: 1.1;
     margin-top: 2rem;
     margin-bottom: 1rem;
+    @include respond(minScreen) {
+      font-size: 2.5rem;
+      margin-top: 0;
+      margin-bottom: 1.7rem;
+      padding: 0;
+    }
+
+    @include respond(bigScreen) {
+      font-size: 3.75rem;
+      margin: -10px;
+    }
+  }
+
+  &__list {
+    width: 100%;
+    max-width: 815px;
+
+    @include respond(minScreen) {
+      width: 90%;
+      margin: 1.5em auto;
+    }
+    @include respond(bigScreen) {
+      width: 75%;
+      margin: 2em auto;
+    }
   }
 
   &__item {
     margin: 0 0 8px 0;
-    width: 100%;
     cursor: pointer;
   }
 
@@ -68,6 +110,10 @@
     color: $white-clr;
     max-height: 1200px;
     transition: max-height 0.25s cubic-bezier(0.5, 0, 0.1, 1);
+
+    @include respond(smallerScreen) {
+      font-size: 1rem;
+    }
   }
 
   &__signature {
@@ -81,29 +127,76 @@
 
   &__description {
     font-size: 1rem;
-    font-weight: 500;
     padding: 0 10%;
     margin: 0 auto;
     max-width: 450px;
     text-align: center;
+
+    @include respond(smallerScreen) {
+      font-size: 0.9rem;
+    }
+    @include respond(minScreen) {
+      margin-top: 0.8rem;
+      font-size: 1.1rem;
+    }
+
+    @include respond(tablet) {
+      font-size: 1.4375rem;
+      margin: 0 20px;
+    }
+
+    @include respond(bigScreen) {
+      font-size: 1.2rem;
+      padding-bottom: 20px;
+      max-width: 100%;
+    }
+  }
+
+  &__formBox {
+    margin-bottom: 1rem;
+    @include respond(bigScreen) {
+      display: flex;
+      flex-direction: row;
+      text-align: center;
+      justify-content: center;
+      align-items: initial;
+      margin: 0;
+    }
   }
 
   &__form {
     width: 100%;
     position: relative;
-    margin: 10px auto;
+    margin: 0.625rem auto 0;
     max-width: 500px;
+    @include respond(minScreen) {
+      margin: 0.875rem auto 0;
+    }
+
+    @include respond(bigScreen) {
+      margin: 0;
+    }
   }
 
   &__input {
     width: 100%;
-    height: 48px;
-    padding: 10px 10px 0;
-    border-radius: 2px;
-    font-size: 16px;
+    height: 3rem;
+    padding: 0.625rem 0.625rem 0;
+    border-radius: 0.125rem;
+    font-size: 1rem;
     border: solid 1px #8c8c8c;
     color: $gray-clr;
-    margin-bottom: 25px;
+    margin-bottom: 1.5625rem;
+    @include respond(smallerScreen) {
+      height: 2.5rem;
+    }
+    @include respond(tablet) {
+      height: 3.75rem;
+    }
+
+    @include respond(bigScreen) {
+      min-width: 450px;
+    }
   }
 
   &__label {
@@ -111,22 +204,44 @@
     top: 15px;
     left: 10px;
     color: #8c8c8c;
-    font-size: 14px;
+    font-size: 0.875rem;
     color: $gray-clr;
+    @include respond(smallerScreen) {
+      top: 0.7rem;
+      left: 0.3rem;
+      font-size: 0.8rem;
+    }
+
+    @include respond(tablet) {
+      top: 1.3rem;
+      font-size: 1rem;
+      font-weight: bold;
+    }
   }
 
   &__icon {
     height: 0.75em;
     width: 0.35em;
     font-size: 0.8rem;
-    margin: 0 0 5px 3px;
+    margin: 0 0 0.3125rem 0.1875rem;
+    @include respond(bigScreen) {
+      margin-top: 7px;
+      margin-left: 8px;
+    }
   }
 }
 
 .accordion__input:focus ~ .accordion__label,
 .accordion__input:not(:placeholder-shown).accordion__input:not(:focus)
   ~ .accordion__label {
-  font-size: 11px;
+  font-size: 0.6875rem;
   left: 7px;
   top: 5px;
+  transition: all ease-in-out 300ms;
+
+  @include respond(tablet) {
+    left: 0.6rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
 }

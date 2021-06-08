@@ -2,29 +2,44 @@
   position: relative;
   max-width: 600px;
   margin-top: 1rem;
+  width: 100%;
+
+  @include respond(bigScreen) {
+    width: 48%;
+  }
 
   &__imgBox {
     margin: -5% 0 0 0;
     position: relative;
-    overflow: hidden;
   }
 
   &__img {
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
+    height: auto;
     position: relative;
     z-index: 2;
+    @include respond(tablet) {
+      margin: 0 7%;
+    }
   }
 
-  &__animation {
-    position: absolute;
+  &__videoBox {
+    width: 100%;
+    height: 100%;
     max-width: 63%;
-    top: 2.5rem;
-    left: 5rem;
+    max-height: 47%;
+    position: absolute;
+    top: 12%;
+    left: 19%;
+
+    @include respond(tablet) {
+      left: 26%;
+    }
   }
 
   &__video {
     width: 100%;
     height: 100%;
+    z-index: -1;
   }
 }
